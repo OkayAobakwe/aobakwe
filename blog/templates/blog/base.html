@@ -1,0 +1,42 @@
+{% load bootstrap4 %}
+<!doctype html>
+<html lang='en'>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale-1,
+	shrink-to-fit=no">
+	<title>Aobakwe</title>
+	{% load static %}
+	{% bootstrap_css %}
+	{% bootstrap_javascript jquery='full' %}
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+</head>
+<body style="font-family:'Poppins'; position: relative;">
+	<nav class="navbar navbar-expand-md border bg-light navbar-light">
+		<a class="navbar-brand" href="{% url 'blog:index' %}">Aobakwe</a> 
+		<button class="navbar-toggler" type='button' data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span></button>
+		<div class="collapse navbar-collapse" id="navbarCollapse">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'projects:project_index' %}">Projects</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'blog:blog' %}">Blog</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'contact:contact_me' %}">Contact me</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<main role="main" class="container" style="min-height: 100%; padding-bottom: 2.5rem; position: relative;">
+		{% block content %}{% endblock %}
+	</main>
+	<footer class="footer card-footer" style="bottom: 0; width: 100%; height:2.5rem; position: absolute;">
+   		<div class="footer-copyright text-center">Copyright: 2020</div>
+  	</footer>
+</body>
+</html>

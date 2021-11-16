@@ -1,0 +1,14 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+<h2 class=" border-bottom mb-2 pb-2">Projects</h2>
+<div style="min-height: 85vh; padding-bottom: 2.5rem;">
+	<h5>Learning Log</h5>
+	<img src="{% static 'img/project1.jpg' %}" style="height:50vh; width:50vh;">
+	<h5>About the project:</h5>
+	<p><a href="{{ my_url }}" class="text-decoration-none">Link</a></p>
+	<p>Learning log is a web application that allows users to track their learning on topics of their interests.</p>
+	<h5>Technology</h5>
+	<p>Django and Bootstrap4</p>
+</div>
+{% endblock %}

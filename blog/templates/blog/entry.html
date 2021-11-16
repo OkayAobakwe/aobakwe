@@ -1,0 +1,44 @@
+{% extends 'blog/base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+	<div class="container" style="min-height: 85vh; padding-bottom: 2.5rem;">
+		<h3>{{entry.title}}</h3>
+		<h5 class="mb-30">{{entry.date_added|date:'M d, Y H:i'}}</h5>
+		<p>{{entry.text|linebreaks}}</p>
+		<div>
+      		<div class="card-body">
+        		<h2>{{ comments.count }} comments</h2>
+
+        		{% for comment in comments %}
+        			<div class="comments" style="padding: 10px;">
+         		 		<p class="font-weight-bold">
+            				{{ comment.name }}
+            				<span class=" text-muted font-weight-normal">
+              					{{ comment.created_on }}
+            				</span>
+          				</p>
+          				{{ comment.body | linebreaks }}
+        			</div>
+        			{% endfor %}
+      		</div>
+    	</div>
+    	<div>
+      		<div class="card-body">
+        		{% if new_comment %}
+        			<div class="alert alert-success" role="alert">
+         				Your comment is awaiting moderation
+        			</div>
+        		{% else %}
+        			<h3>Leave a hate comment</h3>
+        			<form method="post" style="margin-top: 1.3em;" class="form">
+          				{% csrf_token %}
+          				{% bootstrap_form comment_form %}
+          				{% buttons %}
+          					<button name="submit" class="btn btn-dark">Submit</button>
+          				{% endbuttons %}
+        			</form>
+        		{% endif %}
+      		</div>
+    	</div>
+	</div>
+{% endblock %}

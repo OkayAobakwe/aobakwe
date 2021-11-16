@@ -1,0 +1,31 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+  <div class='container' style="min-height: 50vh; min-width:82vw; padding-bottom: 2.5rem;">
+    <div class="row">
+      <div class="col bg-dark">
+        <img src="{% static 'img/hero2.png'%}" style="height:69vh; max-width:82vw;" class="mx-auto d-block">
+      </div>
+      <div class="col bg-light d-flex align-items-center" style="height:">  
+        <h4>Self learning software developer, also a human being(believe it or not), I am probably funny.<br/>I am likely to document all that in my blogs, as I try to display my interests in electronics, machine learning, game dev and network security... yeah that is too much, I agree.<br/><br/> 
+        </h4>
+      </div>
+    </div>
+    <div class="mt-4">
+      <h4>
+        <ul class="list-unstyled list-inline text-center">
+          <li class="list-inline-item">
+            <a href="{{ twitter_url }}" class='text-dark'><i class="fa fa-twitter"></i></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="{{ instagram_url }}" class='text-dark'><i class="fa fa-instagram"></i></a>
+          </li>
+          <li class="list-inline-item">
+            <a href="{{ github_url }}" class='text-dark'><i class="fa fa-github"></i></a>
+          </li>
+        </ul>
+      </h4>
+    </div>
+  </div>
+
+{% endblock %}

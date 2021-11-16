@@ -1,0 +1,13 @@
+{% extends 'blog/base.html' %}
+{% load bootstrap4 %}
+{% block content %}
+	<h2>Contact Me:</h2>
+
+	<form action="{% url 'contact:contact_me' %}" method='post'>
+		{% csrf_token %}
+		{% bootstrap_form form %}
+		{% buttons %}
+			<button name="submit" class="btn btn-dark">Contact</button>
+		{% endbuttons %}
+	</form>
+{% endblock %}
